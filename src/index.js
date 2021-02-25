@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import SeasonDisplay from './components/SeasonDisplay/SeasonDisplay';
-import Loader from './components/Loader/Loader';
+import SeasonDisplay from "./components/SeasonDisplay/SeasonDisplay";
+import Loader from "./components/Loader/Loader";
 
 class App extends Component {
   state = { lat: null, errorMessage: "" };
@@ -17,14 +17,22 @@ class App extends Component {
     console.log("My component was just updated - it re-rendered!");
   }
 
-  render() {
+  renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
       return <div>Error: {this.state.errorMessage}</div>;
     } else if (!this.state.errorMessage && this.state.lat) {
-      return <SeasonDisplay lat={this.state.lat} />
+      return <SeasonDisplay lat={this.state.lat} />;
     } else {
-      return <Loader message="Please accept location request"/>
+      return <Loader message="Please accept location request" />;
     }
+  }
+
+  render() {
+    return(
+      <div className="border red">
+        {this.renderContent()}
+      </div>
+    )
   }
 }
 

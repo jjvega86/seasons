@@ -12,6 +12,7 @@ const seasonConfig = {
     iconName: "snowflake",
   },
 };
+
 const getSeason = (lat, month) => {
   if (month > 2 && month < 9) {
     // if we're in summer months, return summer. Otherwise, return winter
