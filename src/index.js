@@ -22,7 +22,7 @@ class App extends Component {
     } else if (!this.state.errorMessage && this.state.lat) {
       return <SeasonDisplay lat={this.state.lat} />
     } else {
-      return <div>Loading</div>
+      return <div>Loading!</div>
     }
   }
 }
