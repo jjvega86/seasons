@@ -1,15 +1,16 @@
 import React from "react";
 
-const seasonConfig = { // design pattern to create this config object for each component you create. Simplifies code
-    summer: {
-        text: "Let's hit the beach!",
-        iconName: 'sun'
-    },
-    winter: {
-        text: "Burr, it's chilly",
-        iconName: 'snowflake'
-    }
-}
+const seasonConfig = {
+  // design pattern to create this config object for each component you create. Simplifies code
+  summer: {
+    text: "Let's hit the beach!",
+    iconName: "sun",
+  },
+  winter: {
+    text: "Burr, it's chilly",
+    iconName: "snowflake",
+  },
+};
 const getSeason = (lat, month) => {
   if (month > 2 && month < 9) {
     // if we're in summer months, return summer. Otherwise, return winter
@@ -21,12 +22,12 @@ const getSeason = (lat, month) => {
 
 const SeasonDisplay = (props) => {
   const season = getSeason(props.lat, new Date().getMonth());
-  const {text, iconName} = seasonConfig[season];
+  const { text, iconName } = seasonConfig[season];
   return (
     <div>
-      <i className={`${iconName} icon`} />
+      <i className={`massive ${iconName} icon`} />
       <h1>{text}</h1>
-      <i className={`${iconName} icon`} />
+      <i className={`massive ${iconName} icon`} />
     </div>
   );
 };
